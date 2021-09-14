@@ -4,3 +4,10 @@ html, body {
 body {
     margin: 20px;
 }
+.package {
+    width: 10rem;
+    padding: 2rem 0;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    border: 2px solid navy;
+}
