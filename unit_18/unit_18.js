@@ -140,7 +140,7 @@ a10 = {
 }
 function t10() {
     let query = new URLSearchParams(a10).toString();
-    document.querySelector('.out-10').innerHTML = query;
+    a10_res = query;
 }
 
 document.querySelector('.b-10').onclick = t10;

@@ -43,7 +43,7 @@ let s4 = new Set(['a', 'b', 'c', 'z']);
 
 const f4 = () => {
     let input = document.querySelector('.i-4').value;
-    console.log(s4.has(input));
+    document.querySelector('.out-4').innerHTML = s4.has(input);
  }
 
 document.querySelector('.b-4').onclick = f4;
@@ -55,7 +55,7 @@ document.querySelector('.b-4').onclick = f4;
 let s5 = new Set(['a', 'b', 'c', 'z', 'a2', 'b2', 'c2', 'z2']);
 
 const f5 = () => { 
-    console.log(s5.size);
+    document.querySelector('.out-5').innerHTML = s5.size;
 }
 
 document.querySelector('.b-5').onclick = f5;
@@ -67,7 +67,11 @@ let a6 = [1, 2, 3, 4, 5, 3, 4, 5, 2, 4, 5, 3, 24, 5, 2, 4, 56, 4, 3, 2, 335, 2, 
 
 const f6 = () => { 
     let set1 = new Set(a6);
-    console.log(set1);
+    let val = 0;
+        for (let key of set1) {
+            val++;
+        }
+    document.querySelector('.out-6').innerHTML = val;
 }
 
 document.querySelector('.b-6').onclick = f6;
@@ -83,7 +87,7 @@ const f7 = () => {
         document.querySelector('.out-7').innerHTML = 1;
     }
     else if (set1.size != input.length || input.length <=6) {
-        document.querySelector('.out-7').innerHTML = 'povtor';
+        document.querySelector('.out-7').innerHTML = 0;
     }
 
 }
