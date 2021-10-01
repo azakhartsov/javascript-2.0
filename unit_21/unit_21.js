@@ -166,25 +166,31 @@ const reset = document.querySelector('.reset');
 reset.onclick = resetFunction;
 
 function nextFunction() {
-    images[count % images.length].classList.remove('active-img');
-    images[(count + 1) % images.length].classList.add('active-img');
-    document.querySelector('.img-12-max').setAttribute('src', images[(count + 1) % images.length].src);
+
+    images[count].classList.remove('active-img');
+    if (count < images.length - 1) {
+    images[count + 1].classList.add('active-img');
+    document.querySelector('.img-12-max').setAttribute('src', images[count + 1].src);
     count++;
+    }
+    else {
+        count = 0;
+    }
 }
 
 function prevFunction() {
-    images[count % images.length].classList.remove('active-img');
-    images[(count - 1) % images.length].classList.add('active-img');
-    document.querySelector('.img-12-max').setAttribute('src', images[(count - 1) % images.length].src);
+    images[count].classList.remove('active-img');
+    images[count - 1].classList.add('active-img');
+    document.querySelector('.img-12-max').setAttribute('src', images[count - 1].src);
 
     count--;
 }
 
 function resetFunction() {
-    images[count % images.length].classList.remove('active-img');
+    images[count].classList.remove('active-img');
     count = 0;
-    images[count % images.length].classList.add('active-img');
-    document.querySelector('.img-12-max').setAttribute('src', images[count % images.length].src);
+    images[count].classList.add('active-img');
+    document.querySelector('.img-12-max').setAttribute('src', images[count].src);
 }
 
 // ваше событие здесь!!!
