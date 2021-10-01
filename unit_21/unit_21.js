@@ -166,24 +166,31 @@ const reset = document.querySelector('.reset');
 reset.onclick = resetFunction;
 
 function nextFunction() {
-
     images[count].classList.remove('active-img');
-    if (count < images.length - 1) {
-    images[count + 1].classList.add('active-img');
-    document.querySelector('.img-12-max').setAttribute('src', images[count + 1].src);
-    count++;
+    if (count + 1 < images.length) {
+        count++;
+        images[count].classList.add('active-img');
+        document.querySelector('.img-12-max').setAttribute('src', images[count].src);
     }
     else {
         count = 0;
+        images[count].classList.add('active-img');
+        document.querySelector('.img-12-max').setAttribute('src', images[count].src);
     }
 }
 
 function prevFunction() {
     images[count].classList.remove('active-img');
-    images[count - 1].classList.add('active-img');
-    document.querySelector('.img-12-max').setAttribute('src', images[count - 1].src);
-
-    count--;
+    if (count - 1 >= 0) {
+        count--;
+        images[count].classList.add('active-img');
+        document.querySelector('.img-12-max').setAttribute('src', images[count].src);
+    }
+    else {
+     count = images.length - 1;
+     images[count].classList.add('active-img');
+     document.querySelector('.img-12-max').setAttribute('src', images[count].src);
+    }
 }
 
 function resetFunction() {
