@@ -100,5 +100,3 @@ function t8() {
 }
 document.querySelector('.b-8').onclick = t8;
 // ваше событие здесь!!!
-
-
