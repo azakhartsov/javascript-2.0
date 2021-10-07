@@ -51,8 +51,11 @@ console.log(t9validator);
 
 //Task 11.
 // Создайте на основе класса Valid2 объект valid2 и задайте пустой емейл и длину пароля больше 7. Запустите метод validate(). Выведите объект в консоль.
-let t10 = new Valid2("", "123");
+let t10 = new Valid2("", "12345678");
 let valid2 = t10.validate();
 console.log(valid2);
 //Task 12.
 // Создайте на основе класса Valid2 объект valid3 и задайте не пустой емейл и длину пароля больше 7. Запустите метод validate(). Выведите объект в консоль.
+let t11 = new Valid2("email@email.com", "12345678");
+let valid3 = t11.validate();
+console.log(valid3);

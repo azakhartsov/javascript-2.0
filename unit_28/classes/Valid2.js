@@ -11,14 +11,16 @@ class Valid2 extends Valid {
     this.passwordError = passwordError;
   }
   validate() {
+    let out = "";
     if (this.email == "") {
       this.isValid = false;
       this.emaiError = "email empty";
-      return this.emaiError;
+      out += this.emaiError + ", ";
     }
     if (this.password.length < 6) {
       this.passwordError = "min length 6";
-      return this.passwordError;
+      out += this.passwordError;
     }
+    return out;
   }
 }
