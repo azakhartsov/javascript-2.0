@@ -392,7 +392,6 @@ document.querySelector('.b-7').onclick = t7;
 function t8() {
     const query1 = new URLSearchParams(a7).toString();
     const query2 = new URLSearchParams(a8).toString();
-    let out = '';
     const img = document.createElement('img');
 
 
@@ -416,7 +415,7 @@ function t8() {
                 'Content-Type' : 'application/x-www-form-urlencoded',
             },
             body: query2,
-            })
+        })
         .then(data => {
             resolve(data.text());
         })
@@ -429,5 +428,3 @@ function t8() {
     })
 }
 document.querySelector('.b-8').onclick = t8;
-
-// ваше событие здесь!!!
