@@ -10,17 +10,19 @@ class Valid2 extends Valid {
     this.emaiError = emaiError;
     this.passwordError = passwordError;
   }
+
   validate() {
-    let out = "";
+    super.validate();
+    if (!this.isValid) {
+      this.passwordError = "min length 6";
+      return false;
+    }
     if (this.email == "") {
       this.isValid = false;
       this.emaiError = "email empty";
-      out += this.emaiError + ", ";
+      return false;
     }
-    if (this.password.length < 6) {
-      this.passwordError = "min length 6";
-      out += this.passwordError;
-    }
-    return out;
+    this.isValid = true;
+    return true;
   }
 }
